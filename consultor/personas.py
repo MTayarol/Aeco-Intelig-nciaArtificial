@@ -1,0 +1,118 @@
+"""Personas de teste (Fase 4) usadas na validação e como exemplos na interface."""
+
+
+def _p(nome, descricao, esperada, **r):
+    return {"nome": nome, "descricao": descricao, "esperada": esperada, "respostas": r}
+
+
+PERSONAS = {
+    "ana_analitica": _p(
+        "Ana – perfil analítico",
+        "Ama estatística, Python e transformar dados em previsões.",
+        "dados_ml",
+        matematica="alta", atuacao="dados_brutos", ferramenta="python", entrega="insights",
+        dados_pref="modelar", ambiente="nao_importa", criatividade_visual="baixa",
+        comunicacao="media", detalhismo="media", objetivo="pesquisa_inovacao",
+        experiencia="intermediario",
+    ),
+    "bruno_pipelines": _p(
+        "Bruno – dados, mas com foco em pipelines",
+        "Gosta de SQL, de mover dados em escala e de infraestrutura de dados.",
+        "eng_dados",
+        matematica="media", atuacao="dados_brutos", ferramenta="sql", entrega="infraestrutura",
+        dados_pref="pipelines", ambiente="nuvem", criatividade_visual="baixa",
+        comunicacao="media", detalhismo="alta", objetivo="especialista",
+        experiencia="intermediario",
+    ),
+    "carla_seguranca": _p(
+        "Carla – perfil infra/segurança",
+        "Linux, redes e caça a vulnerabilidades.",
+        "ciberseguranca",
+        matematica="media", atuacao="seguranca", ferramenta="linux_redes", entrega="seguranca",
+        dados_pref="nenhum", ambiente="servidores_locais", criatividade_visual="baixa",
+        comunicacao="baixa", detalhismo="alta", objetivo="especialista",
+        experiencia="avancado",
+    ),
+    "diego_visual": _p(
+        "Diego – perfil visual/front-end",
+        "Criativo, ama layouts e JavaScript no navegador.",
+        "frontend",
+        matematica="baixa", atuacao="layouts_visuais", ferramenta="javascript", entrega="produto_usuario",
+        dados_pref="nenhum", ambiente="navegador", criatividade_visual="alta",
+        comunicacao="alta", detalhismo="media", objetivo="especialista",
+        experiencia="intermediario",
+    ),
+    "elisa_negocios": _p(
+        "Elisa – perfil negócios/produto",
+        "Comunicativa, estratégica, sem experiência em programação.",
+        "produto",
+        matematica="baixa", atuacao="planejar_produto", ferramenta="nenhuma", entrega="estrategia",
+        dados_pref="nenhum", ambiente="nao_importa", criatividade_visual="media",
+        comunicacao="alta", detalhismo="media", objetivo="lideranca",
+        experiencia="iniciante",
+    ),
+    "felipe_automacao": _p(
+        "Felipe – automação e CI/CD",
+        "Quer automatizar deploys sobre Linux e infraestrutura própria.",
+        "devops",
+        matematica="media", atuacao="automacao_deploy", ferramenta="linux_redes", entrega="infraestrutura",
+        dados_pref="nenhum", ambiente="servidores_locais", criatividade_visual="baixa",
+        comunicacao="media", detalhismo="media", objetivo="especialista",
+        experiencia="intermediario",
+    ),
+    "gabi_nuvem": _p(
+        "Gabi – arquiteta de nuvem",
+        "Quer projetar infraestrutura escalável em provedores de nuvem.",
+        "cloud",
+        matematica="media", atuacao="servidores_infra", ferramenta="linux_redes", entrega="infraestrutura",
+        dados_pref="nenhum", ambiente="nuvem", criatividade_visual="baixa",
+        comunicacao="media", detalhismo="media", objetivo="arquitetura",
+        experiencia="avancado",
+    ),
+    "hugo_mobile": _p(
+        "Hugo – apps para celular",
+        "Programa em Dart/Kotlin e quer entregar apps ao usuário.",
+        "mobile",
+        matematica="media", atuacao="apps_moveis", ferramenta="mobile_lang", entrega="produto_usuario",
+        dados_pref="nenhum", ambiente="celular", criatividade_visual="alta",
+        comunicacao="media", detalhismo="media", objetivo="especialista",
+        experiencia="intermediario",
+    ),
+    "iara_qualidade": _p(
+        "Iara – qualidade e testes",
+        "Detalhista, adora encontrar bugs e garantir confiabilidade.",
+        "qa",
+        matematica="baixa", atuacao="testes", ferramenta="python", entrega="qualidade",
+        dados_pref="nenhum", ambiente="nao_importa", criatividade_visual="baixa",
+        comunicacao="media", detalhismo="alta", objetivo="especialista",
+        experiencia="iniciante",
+    ),
+    "joao_backend": _p(
+        "João – lógica e APIs",
+        "Java, regras de negócio e servidores.",
+        "backend",
+        matematica="media", atuacao="algoritmos_logicos", ferramenta="java_csharp_go", entrega="logica_negocio",
+        dados_pref="nenhum", ambiente="servidores_locais", criatividade_visual="baixa",
+        comunicacao="media", detalhismo="media", objetivo="especialista",
+        experiencia="intermediario",
+    ),
+    # --- Casos de ambiguidade (testam as regras cruzadas) ---
+    "ambiguo_ds_vs_de_ds": _p(
+        "Caso limite – dados com Python e interesse em prever",
+        "Matemática média, quer extrair insights: deve ir para Ciência de Dados.",
+        "dados_ml",
+        matematica="media", atuacao="dados_brutos", ferramenta="python", entrega="insights",
+        dados_pref="modelar", ambiente="nao_importa", criatividade_visual="media",
+        comunicacao="media", detalhismo="media", objetivo="especialista",
+        experiencia="intermediario",
+    ),
+    "ambiguo_ds_vs_de_de": _p(
+        "Caso limite – dados com Python, mas sem estatística",
+        "Também usa Python e dados brutos, mas prefere pipelines e tem matemática baixa.",
+        "eng_dados",
+        matematica="baixa", atuacao="dados_brutos", ferramenta="python", entrega="infraestrutura",
+        dados_pref="pipelines", ambiente="nuvem", criatividade_visual="baixa",
+        comunicacao="media", detalhismo="media", objetivo="especialista",
+        experiencia="intermediario",
+    ),
+}
