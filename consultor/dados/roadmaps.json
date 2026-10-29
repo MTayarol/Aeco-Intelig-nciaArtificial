@@ -1,0 +1,535 @@
+{
+  "competencias": {
+    "backend": [
+      {
+        "id": "linguagem",
+        "nome": "Linguagem de programação",
+        "tecnologia": "Python ou Java",
+        "nivel_alvo": 2,
+        "descricao": "Escrever funções, estruturas de dados e tratamento de erros."
+      },
+      {
+        "id": "apis",
+        "nome": "APIs e HTTP",
+        "tecnologia": "HTTP e APIs REST",
+        "nivel_alvo": 1,
+        "descricao": "Entender rotas, métodos HTTP, códigos de status e JSON."
+      },
+      {
+        "id": "sql",
+        "nome": "Banco de dados relacional",
+        "tecnologia": "SQL e PostgreSQL",
+        "nivel_alvo": 1,
+        "descricao": "Consultar dados e relacionar tabelas com consultas simples."
+      },
+      {
+        "id": "git",
+        "nome": "Controle de versão",
+        "tecnologia": "Git e GitHub",
+        "nivel_alvo": 1,
+        "descricao": "Criar commits, branches e documentar alterações."
+      },
+      {
+        "id": "testes",
+        "nome": "Testes automatizados",
+        "tecnologia": "pytest ou testes da linguagem escolhida",
+        "nivel_alvo": 1,
+        "descricao": "Testar comportamentos esperados e casos de erro."
+      }
+    ],
+    "frontend": [
+      {
+        "id": "html_css",
+        "nome": "Estrutura e estilo web",
+        "tecnologia": "HTML5 e CSS3",
+        "nivel_alvo": 2,
+        "descricao": "Construir páginas semânticas e layouts responsivos."
+      },
+      {
+        "id": "javascript",
+        "nome": "Programação no navegador",
+        "tecnologia": "JavaScript",
+        "nivel_alvo": 2,
+        "descricao": "Manipular eventos, dados e componentes da interface."
+      },
+      {
+        "id": "acessibilidade",
+        "nome": "Acessibilidade e responsividade",
+        "tecnologia": "HTML semântico e CSS responsivo",
+        "nivel_alvo": 1,
+        "descricao": "Criar interfaces utilizáveis em diferentes telas e por mais pessoas."
+      },
+      {
+        "id": "git",
+        "nome": "Controle de versão",
+        "tecnologia": "Git e GitHub",
+        "nivel_alvo": 1,
+        "descricao": "Manter histórico de mudanças e publicar projetos."
+      },
+      {
+        "id": "consumo_api",
+        "nome": "Consumo de APIs",
+        "tecnologia": "Fetch API e JSON",
+        "nivel_alvo": 1,
+        "descricao": "Carregar dados remotos e tratar estados de erro e carregamento."
+      }
+    ],
+    "dados_ml": [
+      {
+        "id": "python",
+        "nome": "Programação para análise",
+        "tecnologia": "Python",
+        "nivel_alvo": 2,
+        "descricao": "Manipular coleções, funções e arquivos de dados."
+      },
+      {
+        "id": "sql",
+        "nome": "Consultas a dados",
+        "tecnologia": "SQL",
+        "nivel_alvo": 1,
+        "descricao": "Filtrar, agregar e combinar dados de tabelas."
+      },
+      {
+        "id": "estatistica",
+        "nome": "Estatística básica",
+        "tecnologia": "Estatística descritiva e probabilidade",
+        "nivel_alvo": 1,
+        "descricao": "Interpretar distribuições, médias, dispersão e correlações."
+      },
+      {
+        "id": "analise_dados",
+        "nome": "Preparação e análise de dados",
+        "tecnologia": "pandas e Jupyter",
+        "nivel_alvo": 1,
+        "descricao": "Limpar dados ausentes e produzir análises reproduzíveis."
+      },
+      {
+        "id": "ml_basico",
+        "nome": "Fundamentos de machine learning",
+        "tecnologia": "scikit-learn",
+        "nivel_alvo": 1,
+        "descricao": "Separar treino/teste e avaliar um modelo simples sem vazamento de dados."
+      }
+    ],
+    "eng_dados": [
+      {
+        "id": "sql",
+        "nome": "SQL",
+        "tecnologia": "SQL e PostgreSQL",
+        "nivel_alvo": 2,
+        "descricao": "Escrever consultas, junções e agregações."
+      },
+      {
+        "id": "python",
+        "nome": "Automação com código",
+        "tecnologia": "Python",
+        "nivel_alvo": 1,
+        "descricao": "Ler arquivos, transformar registros e automatizar tarefas."
+      },
+      {
+        "id": "etl",
+        "nome": "Pipelines de dados",
+        "tecnologia": "ETL/ELT e pandas",
+        "nivel_alvo": 1,
+        "descricao": "Extrair, transformar e carregar dados com etapas reproduzíveis."
+      },
+      {
+        "id": "modelagem",
+        "nome": "Modelagem de dados",
+        "tecnologia": "Modelagem relacional",
+        "nivel_alvo": 1,
+        "descricao": "Definir tabelas, chaves e relacionamentos consistentes."
+      },
+      {
+        "id": "git",
+        "nome": "Controle de versão",
+        "tecnologia": "Git e GitHub",
+        "nivel_alvo": 1,
+        "descricao": "Versionar código, scripts e documentação do pipeline."
+      }
+    ],
+    "ciberseguranca": [
+      {
+        "id": "redes",
+        "nome": "Fundamentos de redes",
+        "tecnologia": "TCP/IP, DNS e HTTP",
+        "nivel_alvo": 1,
+        "descricao": "Reconhecer protocolos, portas e fluxo básico de comunicação."
+      },
+      {
+        "id": "linux",
+        "nome": "Ambiente Linux",
+        "tecnologia": "Linux e shell",
+        "nivel_alvo": 1,
+        "descricao": "Navegar no terminal e entender permissões e processos."
+      },
+      {
+        "id": "fundamentos_seg",
+        "nome": "Fundamentos de segurança",
+        "tecnologia": "OWASP Top 10 e princípios de segurança",
+        "nivel_alvo": 1,
+        "descricao": "Reconhecer vulnerabilidades comuns e medidas de mitigação."
+      },
+      {
+        "id": "scripting",
+        "nome": "Automação básica",
+        "tecnologia": "Python ou shell",
+        "nivel_alvo": 1,
+        "descricao": "Automatizar tarefas simples de análise e coleta autorizada."
+      },
+      {
+        "id": "lab_etico",
+        "nome": "Prática em laboratório autorizado",
+        "tecnologia": "OWASP Juice Shop ou laboratório local",
+        "nivel_alvo": 1,
+        "descricao": "Registrar achados e correções em ambiente próprio ou autorizado."
+      }
+    ],
+    "devops": [
+      {
+        "id": "linux",
+        "nome": "Sistemas e terminal",
+        "tecnologia": "Linux e shell",
+        "nivel_alvo": 1,
+        "descricao": "Usar comandos, processos, permissões e logs básicos."
+      },
+      {
+        "id": "git",
+        "nome": "Controle de versão",
+        "tecnologia": "Git e GitHub",
+        "nivel_alvo": 1,
+        "descricao": "Trabalhar com commits, branches e revisão de alterações."
+      },
+      {
+        "id": "containers",
+        "nome": "Contêineres",
+        "tecnologia": "Docker",
+        "nivel_alvo": 1,
+        "descricao": "Empacotar e executar uma aplicação em contêiner."
+      },
+      {
+        "id": "cicd",
+        "nome": "Integração contínua",
+        "tecnologia": "GitHub Actions ou equivalente",
+        "nivel_alvo": 1,
+        "descricao": "Automatizar testes e validações a cada alteração."
+      },
+      {
+        "id": "cloud",
+        "nome": "Fundamentos de nuvem",
+        "tecnologia": "Conceitos de AWS, Azure ou GCP",
+        "nivel_alvo": 1,
+        "descricao": "Entender computação, armazenamento, rede e permissões na nuvem."
+      }
+    ],
+    "cloud": [
+      {
+        "id": "redes",
+        "nome": "Redes e conectividade",
+        "tecnologia": "TCP/IP, DNS, sub-redes",
+        "nivel_alvo": 1,
+        "descricao": "Entender endereçamento, conectividade e segmentação básica."
+      },
+      {
+        "id": "fundamentos_cloud",
+        "nome": "Serviços de nuvem",
+        "tecnologia": "AWS, Azure ou Google Cloud",
+        "nivel_alvo": 1,
+        "descricao": "Distinguir computação, armazenamento, banco de dados e redes gerenciadas."
+      },
+      {
+        "id": "iam",
+        "nome": "Identidade e segurança",
+        "tecnologia": "IAM e princípio do menor privilégio",
+        "nivel_alvo": 1,
+        "descricao": "Configurar permissões mínimas e reconhecer riscos de acesso."
+      },
+      {
+        "id": "linux",
+        "nome": "Sistemas operacionais",
+        "tecnologia": "Linux",
+        "nivel_alvo": 1,
+        "descricao": "Usar terminal, permissões e logs para investigar problemas."
+      },
+      {
+        "id": "iac",
+        "nome": "Infraestrutura como código",
+        "tecnologia": "Terraform ou ferramenta equivalente",
+        "nivel_alvo": 1,
+        "descricao": "Descrever e versionar uma infraestrutura pequena como código."
+      }
+    ],
+    "mobile": [
+      {
+        "id": "linguagem_mobile",
+        "nome": "Linguagem e framework mobile",
+        "tecnologia": "Kotlin, Swift ou Flutter/Dart",
+        "nivel_alvo": 2,
+        "descricao": "Implementar telas, funções e estado básico de uma aplicação."
+      },
+      {
+        "id": "interface",
+        "nome": "Interfaces móveis",
+        "tecnologia": "Componentes e navegação mobile",
+        "nivel_alvo": 1,
+        "descricao": "Construir telas acessíveis e navegação entre fluxos."
+      },
+      {
+        "id": "api",
+        "nome": "Consumo de APIs",
+        "tecnologia": "HTTP e JSON",
+        "nivel_alvo": 1,
+        "descricao": "Buscar dados remotos e apresentar carregamento e falhas."
+      },
+      {
+        "id": "git",
+        "nome": "Controle de versão",
+        "tecnologia": "Git e GitHub",
+        "nivel_alvo": 1,
+        "descricao": "Manter o histórico do aplicativo e explicar como executá-lo."
+      },
+      {
+        "id": "testes",
+        "nome": "Testes e depuração",
+        "tecnologia": "Testes unitários do framework escolhido",
+        "nivel_alvo": 1,
+        "descricao": "Testar funções e depurar erros básicos."
+      }
+    ],
+    "qa": [
+      {
+        "id": "test_design",
+        "nome": "Desenho de testes",
+        "tecnologia": "Casos de teste e critérios de aceitação",
+        "nivel_alvo": 2,
+        "descricao": "Criar casos positivos, negativos e de limite."
+      },
+      {
+        "id": "automacao",
+        "nome": "Automação de testes",
+        "tecnologia": "pytest, Playwright ou equivalente",
+        "nivel_alvo": 1,
+        "descricao": "Automatizar verificações repetíveis."
+      },
+      {
+        "id": "api",
+        "nome": "Testes de API",
+        "tecnologia": "HTTP, JSON e cliente de API",
+        "nivel_alvo": 1,
+        "descricao": "Validar códigos de resposta, conteúdo e erros."
+      },
+      {
+        "id": "bugs",
+        "nome": "Relato de defeitos",
+        "tecnologia": "Relatórios de bug e passos de reprodução",
+        "nivel_alvo": 1,
+        "descricao": "Registrar resultado esperado, observado e evidências."
+      },
+      {
+        "id": "git_ci",
+        "nome": "Versionamento e CI",
+        "tecnologia": "Git e integração contínua",
+        "nivel_alvo": 1,
+        "descricao": "Executar testes automaticamente em alterações do projeto."
+      }
+    ],
+    "produto": [
+      {
+        "id": "descoberta",
+        "nome": "Descoberta de necessidades",
+        "tecnologia": "Entrevistas e mapa de problemas",
+        "nivel_alvo": 1,
+        "descricao": "Identificar usuários, necessidades e hipóteses."
+      },
+      {
+        "id": "requisitos",
+        "nome": "Requisitos e histórias",
+        "tecnologia": "Histórias de usuário e critérios de aceitação",
+        "nivel_alvo": 2,
+        "descricao": "Descrever o que precisa ser construído e como validar."
+      },
+      {
+        "id": "priorizacao",
+        "nome": "Priorização",
+        "tecnologia": "Matriz impacto/esforço ou RICE",
+        "nivel_alvo": 1,
+        "descricao": "Explicar prioridades usando critérios explícitos."
+      },
+      {
+        "id": "metricas",
+        "nome": "Métricas de produto",
+        "tecnologia": "KPIs e funil de conversão",
+        "nivel_alvo": 1,
+        "descricao": "Definir métricas relacionadas a um objetivo de usuário."
+      },
+      {
+        "id": "comunicacao",
+        "nome": "Comunicação e alinhamento",
+        "tecnologia": "Roadmap visual e documentação",
+        "nivel_alvo": 1,
+        "descricao": "Comunicar decisões, riscos e dependências com clareza."
+      }
+    ]
+  },
+  "recursos": {
+    "backend": {
+      "certificacoes": [
+        "PCEP – Certified Entry-Level Python Programmer (se escolher Python)",
+        "Oracle Java Foundations (se escolher Java)"
+      ],
+      "projeto": [
+        "API de gestão de tarefas",
+        "Crie uma API REST com cadastro, consulta, atualização e remoção de tarefas, persistência em banco de dados, validação de entrada e testes automatizados.",
+        [
+          "README com instruções de execução",
+          "Rotas documentadas e exemplos de requisição",
+          "Testes para sucesso e erros",
+          "Commits pequenos e organizados"
+        ]
+      ]
+    },
+    "frontend": {
+      "certificacoes": [
+        "Meta Front-End Developer Professional Certificate (formação)",
+        "Certificações introdutórias de acessibilidade web, se disponíveis"
+      ],
+      "projeto": [
+        "Painel web responsivo",
+        "Desenvolva uma interface que consuma uma API pública, com filtros, estados de carregamento/erro, navegação por teclado e layout responsivo.",
+        [
+          "Capturas de tela no README",
+          "Instruções para executar",
+          "Interface responsiva e acessível",
+          "Tratamento de falhas da API"
+        ]
+      ]
+    },
+    "dados_ml": {
+      "certificacoes": [
+        "Microsoft Azure Data Fundamentals (DP-900)",
+        "Formação introdutória em análise de dados ou machine learning"
+      ],
+      "projeto": [
+        "Análise de dados reproduzível",
+        "Escolha um conjunto de dados aberto, documente a limpeza, faça análise exploratória e treine um modelo simples com avaliação adequada.",
+        [
+          "Notebook reproduzível",
+          "Fonte e licença dos dados documentadas",
+          "Métricas e limitações explicadas",
+          "Conclusões apoiadas pelos dados"
+        ]
+      ]
+    },
+    "eng_dados": {
+      "certificacoes": [
+        "Microsoft Azure Data Fundamentals (DP-900)",
+        "Databricks Lakehouse Fundamentals (se disponível)"
+      ],
+      "projeto": [
+        "Pipeline ETL de dados públicos",
+        "Construa um pipeline que leia dados públicos, valide e transforme registros, grave o resultado em banco de dados e registre erros.",
+        [
+          "Etapas de extração, transformação e carga documentadas",
+          "Validação de dados",
+          "Execução reproduzível",
+          "Diagrama simples do fluxo"
+        ]
+      ]
+    },
+    "ciberseguranca": {
+      "certificacoes": [
+        "ISC2 Certified in Cybersecurity (CC)",
+        "CompTIA Security+ (opcional, conforme orçamento e pré-requisitos)"
+      ],
+      "projeto": [
+        "Relatório de segurança em laboratório",
+        "Use apenas uma aplicação intencionalmente vulnerável em ambiente local ou autorizado para documentar riscos, evidências e correções.",
+        [
+          "Escopo e autorização descritos",
+          "Achados com severidade justificada",
+          "Mitigações propostas",
+          "Nenhum teste contra sistemas de terceiros sem autorização"
+        ]
+      ]
+    },
+    "devops": {
+      "certificacoes": [
+        "LPI Linux Essentials",
+        "AWS Certified Cloud Practitioner (opcional)"
+      ],
+      "projeto": [
+        "Aplicação com pipeline CI/CD",
+        "Empacote uma aplicação simples com Docker e configure um pipeline para executar testes automaticamente a cada push.",
+        [
+          "Dockerfile e instruções de execução",
+          "Pipeline automatizado",
+          "Testes executados no CI",
+          "README com arquitetura e decisões"
+        ]
+      ]
+    },
+    "cloud": {
+      "certificacoes": [
+        "AWS Certified Cloud Practitioner",
+        "Microsoft Azure Fundamentals (AZ-900)"
+      ],
+      "projeto": [
+        "Arquitetura de aplicação em nuvem",
+        "Desenhe e documente uma arquitetura pequena para uma aplicação web, incluindo rede, armazenamento, identidade, custos estimados e alternativas.",
+        [
+          "Diagrama de arquitetura",
+          "Justificativa dos serviços escolhidos",
+          "Cuidados de segurança",
+          "Estimativa de custos e limites"
+        ]
+      ]
+    },
+    "mobile": {
+      "certificacoes": [
+        "Formação introdutória em Android, iOS ou Flutter conforme a tecnologia escolhida",
+        "Certificado de conclusão de curso prático, quando oferecido"
+      ],
+      "projeto": [
+        "Aplicativo de organização pessoal",
+        "Desenvolva um aplicativo móvel com lista de tarefas, navegação entre telas, persistência local e tratamento de estados vazios e erros.",
+        [
+          "Instruções de instalação/execução",
+          "Capturas de tela ou vídeo curto",
+          "Persistência dos dados",
+          "Testes das funções principais"
+        ]
+      ]
+    },
+    "qa": {
+      "certificacoes": [
+        "ISTQB Certified Tester Foundation Level (CTFL)"
+      ],
+      "projeto": [
+        "Plano e automação de testes",
+        "Escolha uma aplicação demonstrativa, crie um plano de testes e automatize fluxos críticos e casos negativos.",
+        [
+          "Plano com escopo e riscos",
+          "Casos positivos, negativos e de limite",
+          "Relatórios de execução",
+          "Instruções para rodar os testes"
+        ]
+      ]
+    },
+    "produto": {
+      "certificacoes": [
+        "Professional Scrum Product Owner I (PSPO I), opcional",
+        "Formação introdutória em gestão de produtos e métricas"
+      ],
+      "projeto": [
+        "Estudo de caso de produto digital",
+        "Escolha um problema real, descreva usuários, evidências, hipóteses, prioridades, métricas e um roadmap inicial.",
+        [
+          "Problema e público-alvo definidos",
+          "Hipóteses e evidências separadas",
+          "Backlog priorizado com critérios de aceitação",
+          "Métricas de sucesso e riscos"
+        ]
+      ]
+    }
+  }
+}
