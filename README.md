@@ -21,31 +21,46 @@ Trabalho desenvolvido para o **Centro Universitário Presidente Antônio Carlos 
 
 ## Como funciona
 
-- **Entrevista:** 11 perguntas objetivas (afinidade matemática, preferência de atuação, linguagem/ferramenta,
-  tipo de entrega, interesse em dados, ambiente, criatividade visual, comunicação, detalhismo, objetivo e experiência).
-- **Motor de inferência (Experta):** as respostas viram um fato `Perfil`. **45 regras** SE-ENTÃO
-  (31 delas cruzando 2 ou 3 respostas) somam ou subtraem pontos para cada trilha, usando
-  encadeamento para frente. Uma regra final de menor prioridade (`salience=-100`) escolhe a vencedora.
-- **Desambiguação:** regras cruzadas e de penalidade separam perfis parecidos, como
-  Cientista de Dados × Engenheiro de Dados e DevOps × Cloud.
-- **Justificativa transparente:** a interface mostra a trilha, a confiança (pela margem para a 2ª colocada),
-  as regras que sustentam a decisão, os pontos de atenção e o rastro completo de regras disparadas.
+- **Entrevista:** 11 perguntas objetivas sobre afinidade matemática, preferência de atuação,
+  linguagem/ferramenta, tipo de entrega, interesse em dados, ambiente, criatividade visual,
+  comunicação, detalhismo, objetivo e experiência.
+- **Motor de inferência (Experta):** as respostas válidas são convertidas em um fato `Perfil`.
+  **45 regras** SE-ENTÃO de pontuação (incluindo regras que cruzam 2 ou 3 respostas) somam ou
+  subtraem pontos para cada trilha, usando encadeamento para frente. Uma regra final, de menor
+  prioridade (`salience=-100`), seleciona a trilha vencedora.
+- **Desambiguação:** regras cruzadas e de penalidade ajudam a diferenciar perfis parecidos,
+  como Cientista de Dados × Engenheiro de Dados e DevOps × Cloud.
+- **Validação das respostas:** o motor verifica se todas as perguntas foram respondidas e se
+  as chaves e os valores informados pertencem às opções previstas na entrevista.
+- **Justificativa transparente:** o resultado apresenta a trilha recomendada, a confiança
+  (calculada pela margem em relação à segunda colocada), as regras favoráveis, as ressalvas,
+  a pontuação e o ranking completo.
+- **Roadmap de aprendizagem:** a partir da trilha recomendada, o sistema compara a
+  autoavaliação do usuário com níveis-alvo de competências e apresenta lacunas, etapas de
+  estudo, recursos e uma proposta de projeto para portfólio.
 
 A tabela de decisão completa está em [`docs/matriz_decisao.md`](docs/matriz_decisao.md).
 
 ## Estrutura do projeto
 
-```
+```text
 Aeco-Intelig-nciaArtificial/
-├── app.py                    # Interface web (Streamlit)
+├── app.py                       # Interface web (Streamlit)
 ├── consultor/
-│   ├── conhecimento.py       # Trilhas e perguntas da entrevista
-│   ├── motor.py              # Base de conhecimento: fatos e regras (Experta)
-│   └── personas.py           # Personas de teste
+│   ├── __init__.py
+│   ├── conhecimento.py          # Trilhas, perguntas e opções da entrevista
+│   ├── motor.py                 # Fatos, regras e motor de inferência (Experta)
+│   ├── personas.py              # Personas e perfis de demonstração/teste
+│   ├── roadmap.py               # Análise de lacunas e geração do roadmap
+│   └── dados/
+│       └── roadmaps.json        # Competências, recursos e projetos por trilha
 ├── tests/
-│   └── test_personas.py      # Validação automatizada (pytest)
+│   ├── test_personas.py         # Validação das personas e recomendações
+│   ├── test_robustez.py         # Contratos, determinismo e ranking
+│   ├── test_roadmap.py          # Testes do gerador de roadmap
+│   └── test_edge_cases.py       # Casos limite e validação de entradas
 ├── docs/
-│   └── matriz_decisao.md     # Fase 1: matriz de decisão
+│   └── matriz_decisao.md        # Matriz de decisão do sistema
 ├── conftest.py
 ├── requirements.txt
 ├── .gitignore
@@ -63,26 +78,39 @@ cd Aeco-Intelig-nciaArtificial
 
 # 2. (Recomendado) crie um ambiente virtual
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+source .venv/bin/activate        # Windows: .venv\Scripts\Activate.ps1
 
 # 3. Instale as dependências
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
 # 4. Execute a aplicação
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
 O navegador abrirá em `http://localhost:8501`.
 
 > **Nota sobre o Experta no Python 3.10+:** a versão 1.9.4 do Experta usa `collections.Mapping`,
-> removido no Python 3.10. O arquivo `consultor/motor.py` já aplica uma pequena correção de
-> compatibilidade antes de importar a biblioteca, então nada precisa ser feito manualmente.
+> removido no Python 3.10. O arquivo `consultor/motor.py` aplica uma correção de compatibilidade
+> antes de importar a biblioteca, então não é necessário fazer esse ajuste manualmente.
 
-## Validação com personas (Fase 4)
+## Testes e validação
+
+Para executar toda a suíte automatizada, incluindo personas, robustez, roadmap e casos limite:
 
 ```bash
-pytest -v
+python -m pytest -v
 ```
+
+A suíte verifica, entre outros pontos:
+
+- se todas as trilhas são contempladas pelas personas e recebem recomendações justificadas;
+- se o resultado contém os campos esperados, um ranking completo e comportamento determinístico;
+- se perfis pouco informativos ou ambíguos não interrompem a consulta;
+- se conflitos entre respostas são tratados pelas regras correspondentes;
+- se respostas ausentes, chaves desconhecidas ou valores fora das opções válidas são rejeitados;
+- se o roadmap valida competências e níveis e identifica corretamente as lacunas de aprendizagem.
+
+### Personas utilizadas na validação
 
 | Persona | Perfil | Trilha esperada |
 |---|---|---|
@@ -96,9 +124,9 @@ pytest -v
 | Hugo | Apps para celular (Dart/Kotlin) | Mobile |
 | Iara | Detalhista, caça bugs | QA |
 | João | Java, regras de negócio, APIs | Back-end |
-| 2 casos limite | Dados com Python: prever × pipelines | DS × DE |
+| Casos ambíguos | Dados com Python: modelagem × pipelines | Ciência de Dados × Engenharia de Dados |
 
-As personas também podem ser carregadas na barra lateral da aplicação para demonstração.
+As personas também podem ser utilizadas como exemplos de perfis para demonstração da aplicação.
 
 ## Tecnologias
 
